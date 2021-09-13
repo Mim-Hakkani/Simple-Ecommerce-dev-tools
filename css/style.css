@@ -4,7 +4,7 @@
 	Template URI: http://www.hakkani-it.com
 	Description: Create a Brand new website that is fixing many problems ..
 	Author: Golam Hakkani Mim
- 	Author URI: http:/ww.hakkani-it.com
+ 	Author URI: http:/www.hakkani-it.com
 	License: GNU General Public License version 3.0
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 	Version: 1.0
@@ -16,11 +16,11 @@
 		2.1 search Box
 		
 	3. Main Area 
-	4. Design Area
-	5. Community Area
+	4. All products 
+	5. Single Product
 	6. Subscribe Area
-	7. Download Area
 	8. Footer Area
+  9. Responsive For Different Devices  
 
 -----------------------------------------------------------------------------------*/
 
@@ -56,6 +56,9 @@ body {
   padding: 11px 32px !important;
 }
 
+/* style the rating and font awesome icons */
+
+
 .fa-star{
   color: gold;
   margin-left: 4px;
@@ -63,6 +66,14 @@ body {
 .fa-user-plus{
   color: #0087D2;
 }
+
+
+/*****************
+
+      show the all products style in here 
+
+*********************/
+
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -73,6 +84,15 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+
+/*****************
+
+    show the single product style 
+
+***************/
+
+
 .single-product {
   padding: 10px;
   transition: 0.6s;
@@ -104,6 +124,14 @@ body {
 .cart-main {
   padding-right: 30px;
 }
+
+
+/**************
+   
+        try to responsive in different types of devices 
+
+  *****************/
+
 @media only screen and (max-width: 768px) {
   #all-products {
     display: grid;
