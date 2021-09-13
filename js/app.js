@@ -33,28 +33,37 @@ const showProducts = (products) => {
       <h4> ${product.rating.rate} Out of 5 stars</h4>
       <h3><i class="fa fa-user-plus" aria-hidden="true" style="margin-right:8px"></i>${product.rating.count}</h3>
       
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success" aria-hidden="true"><span class="fa fa-shopping-cart"></span> add to cart  
+      </button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+//number of products add to cart
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
+
+  //update the total price
   updatePrice("price", price);
 
+  //call this function to update tax and delevery charge
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
+
+  //Total Amount of calling functions
   updateTotal()
 };
+
+
+//getInputValue is used to price,delevery,tax amount (all in one functions)
 
 const getInputValue = (id) => {
  
   const element = document.getElementById(id).innerText;
-  
   const converted = parseFloat(element);
-  
   return converted;
 };
 
@@ -65,6 +74,8 @@ const updatePrice = (id, value) => {
 
   const convertPrice = parseFloat(value);
   const total = parseFloat(convertedOldPrice) + convertPrice;
+
+  //to set the value in float number and two number of decemal point
   document.getElementById(id).innerText = parseFloat(total).toFixed(2);
 };
 
@@ -98,7 +109,10 @@ const updateTotal = () => {
   const grandTotal =
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
+
+    //set the grand total in float number of precesion and two decemal point 
   document.getElementById("total").innerText = parseFloat(grandTotal).toFixed(2);
 };
 
+//call the main function 
 loadProducts();
