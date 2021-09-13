@@ -56,9 +56,13 @@ body {
   padding: 11px 32px !important;
 }
 
-
-
-
+.fa-star{
+  color: gold;
+  margin-left: 4px;
+}
+.fa-user-plus{
+  color: #0087D2;
+}
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -72,11 +76,17 @@ body {
 .single-product {
   padding: 10px;
   transition: 0.6s;
+  border: 1px solid #e0e8e8;
+  padding: 10px;
+  margin: 10px;
+  height: 500px;
+ 
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
   border-radius: 10px;
   border: 1px solid cyan;
+  background-color: rgb(182, 255, 249);
 }
 .product-image {
   width: 150px;
