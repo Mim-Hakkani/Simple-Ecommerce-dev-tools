@@ -29,21 +29,27 @@ const showProducts = (products) => {
       <p>Category: ${product.category}</p>
       <h2>Price: $ ${product.price}</h2>
       
+      
       <h4><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></h4>
       <h4> ${product.rating.rate} Out of 5 stars</h4>
-      <h3><i class="fa fa-user-plus" aria-hidden="true" style="margin-right:8px"></i>${product.rating.count}</h3>
+      <h3><i class="fa fa-user-plus" aria-hidden="true" style="margin-right:8px"></i>Views : ${product.rating.count} </h3>
       
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success" aria-hidden="true"><span class="fa fa-shopping-cart"></span> add to cart  
       </button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <button id="details-btn" class="btn btn-danger" onclick = "Details()">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
+
+
+    
   }
+  
 };
 
 //number of products add to cart
 let count = 0;
 const addToCart = (id, price) => {
+  console.log(price);
   count = count + 1;
 
   //update the total price
@@ -113,6 +119,10 @@ const updateTotal = () => {
     //set the grand total in float number of precesion and two decemal point 
   document.getElementById("total").innerText = parseFloat(grandTotal).toFixed(2);
 };
+
+
+
+
 
 //call the main function 
 loadProducts();
