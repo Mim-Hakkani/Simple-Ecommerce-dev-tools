@@ -11,6 +11,7 @@ const loadProducts = () => {
 };
 
 
+
 // show all product in UI 
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
@@ -49,7 +50,7 @@ const showProducts = (products) => {
 //number of products add to cart
 let count = 0;
 const addToCart = (id, price) => {
-  console.log(price);
+
   count = count + 1;
 
   //update the total price
@@ -120,7 +121,12 @@ const updateTotal = () => {
   document.getElementById("total").innerText = parseFloat(grandTotal).toFixed(2);
 };
 
-
+//input form and search value relation 
+const inputField= document.getElementById('input-field').value;
+const searchid = document.getElementById('search-btn');
+searchid.addEventListener('click',function(){
+  document.getElementById('input-field').value = '';
+});
 
 
 
